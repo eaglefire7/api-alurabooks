@@ -1,4 +1,4 @@
-![DevOps Security]
+### DevOps Security
 
 ## 📖 Descrição do Projeto
 
