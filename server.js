@@ -1,7 +1,8 @@
-const fs = require('fs')
+  const fs = require('fs')
 const bodyParser = require('body-parser')
 const jsonServer = require('json-server')
 const jwt = require('jsonwebtoken')
+const https = require('https')
 
 const server = jsonServer.create()
 const router = jsonServer.router('./database.json')
@@ -357,7 +358,11 @@ server.use(/^(?!\/(public|livros|autores|categorias)).*$/, (req, res, next) => {
 })
 
 server.use(router)
-
-server.listen(8000, () => {
-  console.log("API disponível em http://localhost:8000")
-})
+https.createServer(
+  {
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.crt')
+  },
+ server).listen(8000, () => {
+   console.log("API disponível em https://localhost:8000")
+  })
