@@ -1,4 +1,4 @@
-![DevOps Security](http://googleusercontent.com/image_collection/image_retrieval/3160654717550787302_0)
+![DevOps Security]
 
 ## 📖 Descrição do Projeto
 
